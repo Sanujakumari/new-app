@@ -36,3 +36,8 @@ margin: 10px;
    font-size: 10px;
    font-weight: 400;
  } */
+ .add-movie-form{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+ }
