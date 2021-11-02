@@ -1,38 +1,42 @@
-.App {
-  text-align: center;
+.cake-container{
+  height: 350px;
+  width: 250px;
+  background-color: rgb(220, 230, 235);
+  margin: 0px;
+  font-size: 12px;
 }
+.cart{
+  /* margin-left: 550px; */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+text-align: end;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.movie-specs{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  background-color: bisque;
+  /* justify-content:space-between ; */
 
-.App-link {
-  color: #61dafb;
 }
+.addtocart{
+justify-content: space-around;
+align-content: space-around;
+align-items: center;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+margin-left: 150px;
+}
+.cake-image{
+  height: 200px;
+  width: 250px;
+
+}
+.home{
+  width: 1000px;
+  height: 350px;
+}
+.cakeshop{
+  width: 1050px;
+}
+.cake-name{
+  font-size: 15px;
+  font-weight: bold;
 }
