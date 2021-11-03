@@ -1,9 +1,13 @@
 .cake-container{
-  height: 350px;
+  height: 450px;
   width: 250px;
   background-color: rgb(220, 230, 235);
   margin: 0px;
   font-size: 12px;
+}
+.icon{
+  display: flex;
+  flex-direction: column;
 }
 .cart{
   /* margin-left: 550px; */
