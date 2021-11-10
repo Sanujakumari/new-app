@@ -14,6 +14,8 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import {useParams,useHistory} from "react-router-dom"
 import InfoIcon from '@mui/icons-material/Info';
 import { useState } from 'react';
+import Badge from '@mui/material/Badge';
+
 function App(){
   const INITIAL_MOVIES=[{
     name:"Ferrero Rocher Cake",
@@ -60,8 +62,8 @@ function App(){
   {
     name:"Barbie Cake",
     pic:"https://www.kcbakers.com/wp-content/uploads/2017/10/barbi-cake-01-baby-girl-cake.jpg",
-    rate:"2",
-    weight:"2500",
+    rate:"2500",
+    weight:"2",
     details:"These red swirls look quite magical, don't they? They taste quite magical too. This absolutely delicious Red Rose Dress Barbie Cream Cake in 2 Kg is a treat from the heaven above. Make the little ones as well as everyone else in the party go gaga over this deliciousness. "
   },
   {
@@ -80,6 +82,9 @@ function App(){
         <Cart />
       <CakeHouse />   
       <Route exact path="/cakes/:id">
+        <CakeDetails cakes={cakes} />
+        </Route>
+        <Route path="/cart/:id">
         <CakeDetails cakes={cakes} />
         </Route>
         {/* <Route exact path="/cakes/cart:id">
@@ -104,6 +109,8 @@ function App(){
 
     function CakeShop({name,pic,rate,weight,id}){
       const history=useHistory();
+      const [addcart, setAddcart] = useState(0);
+      const [cart, setCart] = useState(0);
 
       return(
 
@@ -127,13 +134,23 @@ function App(){
   <h4 className="cake-rate"> ₹ {rate}</h4>
   </div>
   <p className="cake-weight">{weight} kg</p>
-  <Button 
-  // onClick={()=> history.push("/cakes/cart" + id)}
+  <AddtoCart />
+  {/* <Button 
    className="addtocart" 
   variant="contained" 
+  onClick={() =>history.push("/cart/"+id) }
+  color="primary"
+  aria-label="upload picture">
+  {/* onClick={() => setAddcart(cart + 1)}
+        color="primary"
+        aria-label="upload picture">
+        <Badge badgeContent={addcart} color="primary">
+        <AddShoppingCartIcon />
+  //       </Badge>
+   Add to cart</Button> */}
   
-   startIcon={<AddShoppingCartIcon />}
-   >Add to cart</Button>
+  
+  
 
   </div>
   </CardContent>
@@ -142,6 +159,27 @@ function App(){
 </card>
    )
 
+}
+function AddtoCart(id){
+  const history=useHistory();
+
+return(
+  <Button 
+   className="addtocart" 
+  variant="contained" 
+  onClick={() =>history.push("/cart/"+id) }
+  color="primary"
+  aria-label="upload picture">
+  {/* onClick={() => setAddcart(cart + 1)}
+        color="primary"
+        aria-label="upload picture">
+        <Badge badgeContent={addcart} color="primary">
+        <AddShoppingCartIcon />
+        </Badge>
+   */}
+  
+   Add to cart</Button>
+)
 }
 function CakeHouse(){
   return (
@@ -190,11 +228,12 @@ return (
     )
  }
 function Cart(){
+  const [cart, setCart] = useState(0);
+
   return(
     <div className="cart">
       <Button className="cart" startIcon={<ShoppingCartSharpIcon />} variant="contained">Cart</Button>
 
-    <h3>Cart</h3>
     </div>
   )
 }
