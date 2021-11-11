@@ -182,6 +182,7 @@ function AddtoCart({id,handleClick}) {
     >
       Add to cart
     </Button>
+    
   );
 }
 function CakeHouse({cakes,handleClick}) {
@@ -259,16 +260,12 @@ function CartDetails() {
 
   return (
     <div className="cartdetails">
-      <input placeholder="Enter you name" type="text" />
-      <br />
-      <input placeholder="Enter you address" type="text" />
-      <br />
-      <input placeholder="Enter you location" type="text" />
-      <br />
-      <input placeholder="Enter you number" type="text" />
-      <br />
+            <TextField  label="Enter your name" variant="filled" /> <br />
 
-      <Button variant="contained">Buy Now</Button>
+            <TextField  label="Enter your address" variant="filled" /><br />
+            <TextField  label="Enter your location" variant="filled" /><br />
+            <TextField  label="Enter your number" variant="filled" /><br />
+      <Button variant="contained">Buy Now</Button><br />
       <Button
         variant="contained"
         onClick={() => history.goBack()}
